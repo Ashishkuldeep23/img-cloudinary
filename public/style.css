@@ -42,6 +42,15 @@ h6 {
 }
 
 
+.copyBtn:hover{
+    background-color: yellow;
+}
+
+.copyBtn:active{
+    background-color: red;
+}
+
+
 #spiner_div {
 
     position: absolute;

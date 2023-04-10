@@ -7,15 +7,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0 , maximum-scale=1 , user-scalable=no">
         <title>Cloudinary by AK </title>
 
-        <!-- Now i have cloudinary link for my favicon image -->
+        <!-- Now i have cloudinary link for my favicon image haha haha -->
         <link rel="shortcut icon"
             href="http://res.cloudinary.com/dlvq8n2ca/image/upload/v1680519379/dkctqfv2bqkrdq3ggen5.png"
             type="image/x-icon">
 
+        <!-- own css link -->
         <link rel="stylesheet" href="style.css">
 
+        <!-- Bootstarp 5 css cdn link -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
     </head>
 
     <body>
@@ -62,7 +66,7 @@
 
                     </div>
 
-                    <h6 >@copyrights to Ashish</h6>
+                    <h6>@copyrights to Ashish</h6>
 
 
 
@@ -86,7 +90,7 @@
 
             async function handleImageUpload(event) {
 
-
+                // // // Below is also working ---------------->
                 // const file = document.getElementById("").files[0]
 
 
@@ -130,13 +134,13 @@
                     document.querySelector(".container").style.filter = "none";
                     document.querySelector("#spiner_div").style.visibility = "hidden"
 
-
+                    const urlOfPic = json.data.url
+                    
                     document.getElementById("result").innerHTML = `
-                    <p>${json.data.url}</p>
-                    <img src="${json.data.url}" />
+                    <p>${urlOfPic} <span class="copyBtn" onclick="copyAnyText('${urlOfPic}')"><i class="fa-regular fa-copy"></i></sapn> </p>
+                    <img src="${urlOfPic}" />
                     <p>Open another pic and generate link.</p>
                     `
-
                 }
 
 
@@ -145,14 +149,34 @@
             }
 
 
+
+
+            // // Below function is resposible for copy any text ---------------->
+            function copyAnyText(value) {
+                // console.log(value)
+
+                navigator.clipboard.writeText(value);
+                // Alert the copied text
+                alert("Copied the text: " + value);
+            }
+
+
         </script>
 
 
 
 
+        <!-- Bootstrap 5 js cdn link -->
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-            crossorigin="anonymous"></script>
+            crossorigin="anonymous">
+        </script>
+
+        <!-- Font osm link  -->
+        <script src="https://kit.fontawesome.com/722e381419.js" crossorigin="anonymous"></script>
+
+
     </body>
 
 </html>
